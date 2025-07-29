@@ -10,9 +10,10 @@ const UserContextProvider = ({ children }) => {
 
     const getCurrentUser = async () => {
         try {
-            const res = await axios.get("https://text-notes-backend.onrender.com/api/user/getCurrentUser", {
-                withCredentials: true,
-            });
+           const res = await axios.get(`${serverUrl}/api/user/getCurrentUser`, {
+  withCredentials: true,
+});
+
 
             console.log("✅ [Frontend] Current user response:", res.data.user);
             setUserData(res.data.user);
